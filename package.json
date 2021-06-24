@@ -1,32 +1,31 @@
 {
-  "name": "react-native-keyevent",
+  "name": "react-native-touchevent",
   "version": "0.2.8",
-  "description": "Capture external keyboard keys or remote control button events",
+  "description": "Capture external touch events",
   "types": "index.d.ts",
   "keywords": [
     "react-native",
-    "keyevent",
-    "keyboard",
+    "touchevent",
+    "touch",
     "external",
     "android",
-    "module",
-    "remote"
+    "module"
   ],
-  "author": "Kevin Johnson <kevinejohn@gmail.com> (github.com/kevinejohn)",
+  "author": "Javier Santana <javier@uhspot.com> (github.com/UhSpot)",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kevinejohn/react-native-keyevent.git"
+    "url": "git+https://github.com/UhSpot/react-native-touchevent.git"
   },
   "bugs": {
-    "url": "https://github.com/kevinejohn/react-native-keyevent/issues"
+    "url": "https://github.com/UhSpot/react-native-touchevent/issues"
   },
   "peerDependencies": {
     "react-native": ">=0.30"
   },
   "rnpm": {
     "android": {
-      "packageInstance": "new KeyEventPackage()"
+      "packageInstance": "new TouchEventPackage()"
     }
   }
 }

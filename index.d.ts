@@ -1,11 +1,11 @@
-declare module 'react-native-keyevent';
+declare module 'react-native-touchevent';
 
-export type KeyEventProps = { action: number; keyCode: number; pressedKey: string; characters: string };
+export type TouchEventProps = { action: number; touchCode: number; touched: boolean; };
 
-export function onKeyDownListener(keyEvent: any): void;
-export function onKeyUpListener(keyEvent: any): void;
-export function onKeyMultipleListener(keyEvent: any): void;
+export function onTouchDownListener(keyEvent: any): void;
+export function onTouchUpListener(keyEvent: any): void;
+export function onTouchMultipleListener(keyEvent: any): void;
 
-export function removeKeyDownListener(): void;
-export function removeKeyUpListener(): void;
-export function removeKeyMultipleListener(): void;
+export function removeTouchDownListener(): void;
+export function removeTouchUpListener(): void;
+export function removeTouchMultipleListener(): void;

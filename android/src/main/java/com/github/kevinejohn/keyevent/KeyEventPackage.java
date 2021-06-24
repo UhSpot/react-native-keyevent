@@ -1,4 +1,4 @@
-package com.github.kevinejohn.keyevent;
+package com.github.uhspot.touchevent;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -13,13 +13,13 @@ import java.util.List;
 /**
  * Created by Kevin Johnson on 8/15/16.
  */
-public class KeyEventPackage implements ReactPackage {
-    public KeyEventPackage() { }
+public class TouchEventPackage implements ReactPackage {
+    public TouchEventPackage() { }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-            KeyEventModule.initKeyEventModule(reactContext)
+            TouchEventModule.initTouchEventModule(reactContext)
         );
     }
 

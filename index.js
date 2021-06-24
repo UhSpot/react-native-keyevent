@@ -1,56 +1,56 @@
 import { DeviceEventEmitter, NativeEventEmitter, NativeModules, Platform } from 'react-native';
 
-class KeyEvent {
-  onKeyDownListener(cb) {
-    this.removeKeyDownListener();
+class TouchEvent {
+  onTouchDownListener(cb) {
+    this.removeTouchDownListener();
     if (Platform.OS === "ios") {
-      let keyEvent = new NativeEventEmitter(NativeModules.RNKeyEvent);
-      this.listenerKeyDown = keyEvent.addListener('onKeyDown', cb);
+      let touchEvent = new NativeEventEmitter(NativeModules.RNTouchEvent);
+      this.listenerTouchDown = touchEvent.addListener('onTouchDown', cb);
     } else {
-      this.listenerKeyDown = DeviceEventEmitter.addListener('onKeyDown', cb);
+      this.listenerTouchDown = DeviceEventEmitter.addListener('onTouchDown', cb);
     }
   }
 
-  removeKeyDownListener() {
-    if (this.listenerKeyDown) {
-      this.listenerKeyDown.remove();
-      this.listenerKeyDown = null;
+  removeTouchDownListener() {
+    if (this.listenerTouchDown) {
+      this.listenerTouchDown.remove();
+      this.listenerTouchDown = null;
     }
   }
 
-  onKeyUpListener(cb) {
-    this.removeKeyUpListener();
+  onTouchUpListener(cb) {
+    this.removeTouchUpListener();
     if (Platform.OS === "ios") {
-      let keyEvent = new NativeEventEmitter(NativeModules.RNKeyEvent);
-      this.listenerKeyUp = keyEvent.addListener('onKeyUp', cb);
+      let touchEvent = new NativeEventEmitter(NativeModules.RNTouchEvent)
+      this.listenerTouchUp = touchEvent.addListener('onTouchUp', cb);
     } else {
-      this.listenerKeyUp = DeviceEventEmitter.addListener('onKeyUp', cb);
+      this.listenerTouchUp = DeviceEventEmitter.addListener('onTouchUp', cb);
     }
   }
 
-  removeKeyUpListener() {
-    if (this.listenerKeyUp) {
-      this.listenerKeyUp.remove();
-      this.listenerKeyUp = null;
+  removeTouchUpListener() {
+    if (this.listenerTouchUp) {
+      this.listenerTouchUp.remove();
+      this.listenerTouchUp = null;
     }
   }
 
-  onKeyMultipleListener(cb) {
-    this.removeKeyMultipleListener();
+  onTouchMultipleListener(cb) {
+    this.removeTouchMultipleListener();
     if (Platform.OS === "ios") {
-      let keyEvent = new NativeEventEmitter(NativeModules.RNKeyEvent);
-      this.listenerKeyMultiple = keyEvent.addListener('onKeyMultiple', cb);
+      let touchEvent = new NativeEventEmitter(NativeModules.RNTouchEvent);
+      this.listenerTouchMultiple = touchEvent.addListener('onTouchMultiple', cb);
     } else {
-      this.listenerKeyMultiple = DeviceEventEmitter.addListener('onKeyMultiple', cb);
+      this.listenerTouchMultiple = DeviceEventEmitter.addListener('onTouchMultiple', cb);
     }
   }
 
-  removeKeyMultipleListener() {
-    if (this.listenerKeyMultiple) {
-      this.listenerKeyMultiple.remove();
-      this.listenerKeyMultiple = null;
+  removeTouchMultipleListener() {
+    if (this.listenerTouchMultiple) {
+      this.listenerTouchMultiple.remove();
+      this.listenerTouchMultiple = null;
     }
   }
 }
 
-export default new KeyEvent();
+export default new TouchEvent();
